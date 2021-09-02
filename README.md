@@ -13,4 +13,4 @@ In this repo, I learnt
 - How to setup project to connect and interact with Solana blockchain
 - How to create address with keypair on Solana blockchain
 - How to retreive, send and receive address balance on Solana blockchain
-- How to deplot a program (=smart contract in other protocols)
+- How to deplot a program (=smart contract in other protocols) to read state and modify state on the Solana blockcahin
