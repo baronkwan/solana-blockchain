@@ -1,5 +1,5 @@
-import React from 'react';
-import { Alert, Button, Col, Space, Typography } from 'antd';
+import React from "react";
+import { Alert, Button, Col, Space, Typography } from "antd";
 import { Keypair } from "@solana/web3.js";
 
 const { Text, Paragraph } = Typography;
@@ -7,16 +7,25 @@ const { Text, Paragraph } = Typography;
 const Account = ({ keypair, setKeypair }) => {
   const generateKeypair = () => {
     // Generate a Keypair
+    const keypair = Keypair.generate();
+    console.log(keypair);
     // Save it to <App />'s state
-  }
+    setKeypair(keypair);
+  };
 
   // parse the address (as a string) from the keypair object
-  const publicKeyStr = "TBD";
+  const publicKeyStr = keypair && keypair.publicKey.toString();
 
   return (
     <Col>
-      <Button type="primary" onClick={generateKeypair} style={{ marginBottom: "20px" }}>Generate a Keypair</Button>
-      {keypair &&
+      <Button
+        type="primary"
+        onClick={generateKeypair}
+        style={{ marginBottom: "20px" }}
+      >
+        Generate a Keypair
+      </Button>
+      {keypair && (
         <Col>
           <Space direction="vertical">
             <Alert
@@ -32,7 +41,10 @@ const Account = ({ keypair, setKeypair }) => {
                     This is the string representation of the public key
                     <Text code>{publicKeyStr}</Text>.
                   </div>
-                  <Text>It's accessible (and copyable) at the top right of this page.</Text>
+                  <Text>
+                    It's accessible (and copyable) at the top right of this
+                    page.
+                  </Text>
                 </div>
               }
               type="success"
@@ -40,9 +52,9 @@ const Account = ({ keypair, setKeypair }) => {
             />
           </Space>
         </Col>
-      }
+      )}
     </Col>
   );
-}
+};
 
-export default Account
+export default Account;
