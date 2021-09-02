@@ -8,7 +8,7 @@ Solana is an open-source project implementing a new, high-performance, permissio
 
 ## Summary
 
-In this repo, I learnt
+In this repo, learnt
 - How Solana works
 - How to setup project to connect and interact with Solana blockchain
 - How to create address with keypair on Solana blockchain
